@@ -10,7 +10,11 @@
     "url": "http://nfriedly.com/"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "flash",
+    "actionscript",
+    "action script",
+    "swf"
   ],
   "main": "Gruntfile.js",
   "engines": {
