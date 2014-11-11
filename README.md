@@ -1,6 +1,8 @@
 # grunt-swf
 
-> Automates using Apache Flex to compile .as files to .swf.\nNote: you must install the Apache Flex SDK seperately and then configure this plugin with the path to the SDK.
+Automates using Apache Flex to compile .as files to .swf.
+
+Note: you must install the Apache Flex SDK separately and then configure this plugin with the path to the SDK.
 
 ## Getting Started
 This plugin requires Grunt.
@@ -16,77 +18,45 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 ```js
 grunt.loadNpmTasks('grunt-swf');
 ```
-
 ## The "swf" task
 
-### Overview
 In your project's Gruntfile, add a section named `swf` to the data object passed into `grunt.initConfig()`.
 
-```js
-grunt.initConfig({
-  swf: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-})
-```
-
-### Options
-
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  swf: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+We'll get to the `flex-sdk-path` in a minute.
 
 ```js
 grunt.initConfig({
   swf: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      'flex-sdk-path': './path-to-flex-sdk'
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    'dist/filename.swf' : 'src/filename.as'
   },
+  // ...
 })
 ```
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+## Installing the Apache Flex SDK
+
+Installing the Flex SDK is a two-step process: 
+
+1. Download and install the "SDK Installer" from https://flex.apache.org/installer.html
+2. that installs a program named "Apache Flex SDK Installer". Run it to download the actual SDK. 
+
+Take note of the folder you install the SDK into in step 2. and add it to your grunt config.
+ 
+After this, `grunt swf` should be able to compile compile your configured .as files.
+
+## Tips
+
+This plugin plays nice with [grunt-newer](https://www.npmjs.org/package/grunt-newer) - use it to avoid 
+unnecessarily re-generating your .swf files when the .as source hasn't changed.
+
 
 ## Release History
-_(Nothing yet)_
+
+### 1.0.0 - 2014-11-11
+* Initial release, extracted code from https://github.com/nfriedly/Javascript-Flash-Cookies and added tests.
 
 ## License
 Copyright (c) 2014 Nathan Friedly. Licensed under the MIT license.
