@@ -28,7 +28,7 @@ module.exports = function (grunt) {
     var done = this.async();
     var fs = require('fs');
     var pathUtil = require('path');
-    var mxmlcPath = pathUtil.resolve(__dirname, sdkPath, './bin/mxmlc');
+    var mxmlcPath = pathUtil.resolve(process.cwd(), sdkPath, './bin/mxmlc');
     if (process.platform == 'win32') {
       // node does not appear to have a seperate flag for 64-bit windows: http://nodejs.org/api/process.html#process_process_platform
       mxmlcPath += ".bat";
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 
       function exec(bin, args, done) {
         var command = cp.spawn(bin, args, {
-          cwd: __dirname
+          cwd: process.cwd()
         });
 
         command.stdout.on('data', function(d) {

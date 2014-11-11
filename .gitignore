@@ -3,3 +3,4 @@ npm-debug.log
 tmp
 .idea/
 flex-sdk/
+test/out/
