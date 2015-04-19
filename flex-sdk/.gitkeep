@@ -1,3 +1,0 @@
-This file is here to ensure git creates the flex-sdk directory even though I'm not checking in the flex-sdk itself.
-
-(Git always ignores empty directories)
