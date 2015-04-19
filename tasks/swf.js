@@ -27,6 +27,7 @@ module.exports = function (grunt) {
     }
     var done = this.async();
     var fs = require('fs');
+    var mv = require('mv');
     var pathUtil = require('path');
     var mxmlcPath = pathUtil.resolve(process.cwd(), sdkPath, './bin/mxmlc');
     if (process.platform === 'win32') {
@@ -81,7 +82,7 @@ module.exports = function (grunt) {
           if (err) {
             return err;
           }
-          exec('mv', [src.replace('.as', '.swf'), dest], done);
+          mv(src.replace('.as', '.swf'),dest,done);
         });
       });
     });
