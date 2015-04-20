@@ -1,6 +1,6 @@
 {
   "name": "grunt-swf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automates using Apache Flex to compile .as files to .swf.\\nNote: you must install the Apache Flex SDK separately and then configure this plugin with the path to the SDK.",
   "homepage": "https://github.com/nfriedly/grunt-swf",
   "repository": "https://github.com/nfriedly/grunt-swf.git",
