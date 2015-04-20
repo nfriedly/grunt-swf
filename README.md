@@ -55,7 +55,10 @@ unnecessarily re-generating your .swf files when the .as source hasn't changed.
 
 ## Release History
 
-### 1.0.0 - 2014-11-11
+### 1.0.2 - 2015-04-20
+* Switched from native `mv` to [mv package](https://www.npmjs.com/package/mv) to support a wider range of environments.
+
+### 1.0.1 - 2014-11-11
 * Initial release, extracted code from https://github.com/nfriedly/Javascript-Flash-Cookies and added tests.
 
 ## License
